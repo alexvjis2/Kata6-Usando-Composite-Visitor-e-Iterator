@@ -17,6 +17,9 @@ public class FileSystemReader {
         }
         
         root = new Directory(fromDir);
+    }
+    
+    public void read() {
         recursiveRead(root);
         
         ComponentVisitor printer = new ComponentVisitor() {
@@ -39,7 +42,6 @@ public class FileSystemReader {
         
         root.accept(printer);
     }
-    
     
     private void recursiveRead(Directory dirToRead) {
         File dir = new File(dirToRead.getRoute());
